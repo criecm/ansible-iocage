@@ -274,7 +274,7 @@ def _get_iocage_facts(module, iocage_path, argument="all", name=None):
             if _jid == '---':
                 # non-iocage jails: skip all
                 break
-            elif re.match(r'(\d+|-)', _jid):
+            elif re.match(r'(\d+|-|None)', _jid):
                 _fragments = line.split('\t')
                 if len(_fragments) == 10:
                     (_jid, _name, _boot, _state, _type, _release, _ip4, _ip6, _template, _basejail) = _fragments
